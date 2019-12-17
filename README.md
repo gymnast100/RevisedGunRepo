@@ -1,0 +1,2 @@
+# RevisedGunRepo
+only few directories

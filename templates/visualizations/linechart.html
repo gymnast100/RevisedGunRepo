@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Gun Violence Visualization Dashboard</title>
+
+    <!-- Boostrap Stylesheet -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" media="screen"> 
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" media="screen"> -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Our own CSS stylesheet -->
+   
+    <link rel="stylesheet" href="../assets/css/style.css" media="screen"> 
+
+    
+
+  </head>
+
+  <body>
+        <!-- Start of navbar -->
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid navbar-custom">
+          
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="row">
+                        <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <!-- <span class="icon-bar"></span> -->
+                            <!-- <span class="icon-bar"></span> -->
+                        </button>
+                        <div class="col-xs-9 phone-nav">
+                            <a class="navbar-brand" href="../index.html" id="logo">GUN VIOLENCE IN USA</a>
+                        </div>
+                        </div>
+          
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHARTS <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="linechart.html">Gun Violence 2013-2018(monthly)</a></li>
+                                        <li><a href="barchart.html">Gun Violence 2013-2018(yearly)</a></li>
+                                        <li><a href="cloudiness.html">Cloudiness</a></li> 
+                                        <!-- <li><a href="visualizations/wind.html">Wind Speed</a></li> -->
+                                    </ul>
+                                </li>
+                                <li><a href="../current.html">2019 Data</a></li>
+                                <li><a href="../data.html">Data</a></li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                  </div>
+              </div><!-- /.container-fluid -->
+        </nav>
+           
+               
+        <!-- End of navbar -->
+        <h1>Gun Violence from Jan 2013 to Mar 2018 on a monthly basis</h1>
+        <div id="plot"></div>
+        <!-- <div id="barchart"></div>
+        <div id="piechart"></div> -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="../../static/js/line.js"></script>
+   </body>
+</html>
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gun Violence </title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Gun Violence from Jan 2013 to Mar 2018 on a monthly basis</h1>
+    <div id="plot"></div>
+     <div id="barchart"></div>
+    <div id="piechart"></div> -->
+    <!-- <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="../static/js/line.js"></script>
+</body>
+</html> --> 

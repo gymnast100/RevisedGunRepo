@@ -9,18 +9,18 @@
     <title>Gun Violence Visualization Dashboard</title>
 
     <!-- Boostrap Stylesheet -->
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css" media="screen"> 
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" media="screen"> 
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" media="screen"> -->
     
     <!-- Our own CSS stylesheet -->
    
-    <link rel="stylesheet" href="../static/css/styles.css" media="screen"> 
+    <link rel="stylesheet" href="../assets/css/styles.css" media="screen"> 
 
   </head>
 
   <body>
     <!-- Start of navbar -->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-default">
       <div class="container-fluid navbar-custom">
 
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -33,7 +33,7 @@
               <span class="icon-bar"></span>
             </button>
             <div class="col-xs-9 phone-nav">
-              <a class="navbar-brand" href="#" id="logo">GUN VIOLENCE IN USA</a>
+              <a class="navbar-brand" href="index.html" id="logo">GUN VIOLENCE IN USA</a>
             </div>
           </div>
 
@@ -41,7 +41,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right navbar-right-custom">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Charts <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHARTS <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                  <li><a href="visualizations/linechart.html">2014-2018 Monthly Reports</a></li>
                   <li><a href="visualizations/barchart.html">2014-2017 Yearly Reports</a></li>
@@ -60,35 +60,37 @@
 
     <!-- Start of container -->
     <div class="container">
-      <section class="row">
-        <div class="col-md-8">
-          <article class="description-content">
-            <h1 class="description-header">Summary: Latitude vs. X</h1>
-            <hr class="description-hr"/>
-            <img src="../assets/images/Fig1.png" alt="" id="description-image"/>
-            <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.</p>
-            <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site provides the source data and visualizations created as part of the analysis, as well as explanations and descriptions of any trends and correlations witnessed.</p>
-          </article>
-        </div>
-        <div class="col-md-4">
+        <!-- <section class="row"> -->
+            <!-- <div class="col-med-12"> -->
+                <div class="Com-content"> 
+                    <h1 class="description-header">Comparison: Latitude vs. X</h1>
+                    <hr class="description-hr"/>
+                    <p>Click any plot to get in-depth analysis.</p>
+                    <div class="row">
 
-          <!-- Start of Visualizations imageNav Area -->
-          <section id="imageNav-area">
-            <div class="imageNav-content">
-              <h2 class="imageNav-header">Visualizations</h2>
-              <hr />
-              <div id="images">
-                <a href="visualizations/linechart.html"><img src="../assets/images/Fig1.png" alt="Latitude vs. Max Temperature" class="imageNav-photo"></a>
-                <a href="visualizations/barchart.html"><img src="../assets/images/Fig2.png" alt="Latitude vs. Humidity" class="imageNav-photo"></a>
-                <a href="visualizations/cloudiness.html"><img src="../assets/images/Fig3.png" alt="Latitude vs. Cloudiness" class="imageNav-photo"></a>
-                <a href="visualizations/wind.html"><img src="../assets/images/Fig4.png" alt="Latitude vs. Wind Speed" class="imageNav-photo"></a>
-              </div>
-            </div>
-          </section>
-          <!-- End of the Visualizations imageNav Area -->
-
-        </div>
-      </section>
+                      <div class="col-sm-6">
+                        <h3 class="imageCom-header">vs. Max Temperature</h3> 
+                        <a href="visualizations/linechart.html"><img src="../assets/images/Fig1.png" class="img-responsive" alt="Latitude vs. Max Temperature" class="imageCom-photo"></a>
+                      </div>
+                      <div class="col-sm-6">
+                        <h3 class="imageCom-header">vs. Humidity</h3>
+                        <a href="visualizations/barchart.html"><img src="../assets/images/Fig2.png" class="img-responsive" alt="Latitude vs. Max Temperature" class="imageCom-photo"></a>
+                      </div>
+                    </div>
+                    <div class="row"> 
+                      <div class="col-sm-6">
+                        <h3 class="imageCom-header">vs. Cloudiness</h3>
+                        <a href="visualizations/cloudiness.html"><img src="../assets/images/Fig3.png" class="img-responsive" alt="Latitude vs. Max Temperature" class="imageCom-photo"></a>
+                      </div>
+                      <div class="col-sm-6">
+                        <h3 class="imageCom-header">vs. Wind Speed</h3>
+                        <a href="visualizations/wind.html"><img src="../assets/images/Fig4.png" class="img-responsive" alt="Latitude vs. Max Temperature" class="imageCom-photo"></a>
+                      </div>
+                    </div> 
+                  </div> 
+            <!-- </div> -->
+        <!-- </section> -->
+       
     </div>
 
     <!-- Start of footer -->

@@ -61,29 +61,35 @@ html{ min-height: 100%;
     text-align: center;
     
 }
+
+
 #logo.navbar-brand{
     display: block;
     width: 120%;
-    /* background-color: crimson; */
+    background-color: orange;
     float: inherit;
     margin-left: 100px;
     font-size: 40px;
     font-weight: bolder;
-    color: crimson;
+    color:black;
     /* display: inline; */
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .dropdown-toggle{
-    font-size: 20px;
-    color: whitesmoke;
-    font-weight: bolder;
-
+    font-size: 30px;
+    color: yellow;
+    background-color: aquamarine;    
 }
 li a {
     display: block;
+    border-bottom-color: black;
+    border-left-color:black;
+    border-top-color:  black;
+    border-right-color: black;
     font-size: 20px;
-    color: blue;
-    background-color: blue;
+    color:black;
+    background-color: rgb(235, 201, 13);
+    mask-border-width: 20px;
     text-align: center;
     padding: 20px 30px;
     text-decoration-color:black;

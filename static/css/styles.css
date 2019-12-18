@@ -58,7 +58,7 @@ html{ min-height: 100%;
     background-color:black;
     width: 100%;
     min-height:100px;
-    text-align: center;
+    text-align: justify;
     
 }
 
@@ -78,17 +78,17 @@ html{ min-height: 100%;
 .dropdown-toggle{
     font-size: 30px;
     color: yellow;
-    background-color: aquamarine;    
+    background-color:blue;    
 }
 li a {
     display: block;
     border-bottom-color: black;
-    border-left-color:black;
+    border-left-color:gray;
     border-top-color:  black;
-    border-right-color: black;
+    border-right-color:grey;
     font-size: 20px;
     color:black;
-    background-color: rgb(235, 201, 13);
+    background-color: brown;
     mask-border-width: 20px;
     text-align: center;
     padding: 20px 30px;

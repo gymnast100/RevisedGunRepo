@@ -57,32 +57,6 @@ var trace1 = {
 
 // FOR BAR CHART
 
-[
-  {
-    "guns_count": 76189.0, 
-    "injured": 30703, 
-    "killed": 15511, 
-    "year": "2017"
-  }, 
-  {
-    "guns_count": 53821.0, 
-    "injured": 30580, 
-    "killed": 15066, 
-    "year": "2016"
-  }, 
-  {
-    "guns_count": 36849.0, 
-    "injured": 26967, 
-    "killed": 13484, 
-    "year": "2015"
-  }, 
-  {
-    "guns_count": 7927.0, 
-    "injured": 23002, 
-    "killed": 12557, 
-    "year": "2014"
-  }
-]
 
 
 d3.json("/yeardata").then( function (data){
@@ -91,19 +65,21 @@ d3.json("/yeardata").then( function (data){
         x: data.map(row => row.year),
         y: data.map(row => row.injured),
         text: "Injured",
+        name: "Injured",
         type: "bar"
       };
     
       var trace2 = {
         x: data.map(row => row.year),
         y: data.map(row => row.killed),
-        text: "",
+        text: "Killed",
+        name:"Killed",
         type: "bar"
       }
     var data =[trace1, trace2];
 
     var layout = {
-        title: "Gun Violence 2013 - 2018 ",
+        title: "Gun Violence 2014 - 2018 ",
         xaxis: { title: "Years" },
         yaxis: { title: "Number of killings" }
     };

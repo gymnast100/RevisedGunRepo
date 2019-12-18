@@ -65,19 +65,47 @@
 
     <!-- Start of container -->
     <div class="container">
+      <!-- <div class="row">
+        <div class="col-md-12 jumbotron text-center">
+          <h1>Gun Violence Dashboard</h1>
+          <p>Use the interactive charts below to explore the dataset</p>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-md-2">
+          <div class="well">
+            <h5>SELECT Year:</h5>
+            <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Gun Usage - Yearly Data</h3>
+            </div>
+            <div id="sample-metadata" class="panel-body"></div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div id="pie"></div>
+        </div>
+       
+      </div>
+    </div>
+
+    <!-- OLD CODE  OLD CODE OLD CODE  -->
+    <!-- <div class="container">
       <section class="row">
         <div class="col-md-8">
           <article class="description-content">
-            <h1 class="description-header">Cloudiness</h1>
+            <h1 class="description-header">Types Of Shootings</h1>
             <hr class="description-hr"/>
             <img src="../../assets/images/Fig3.png" alt="" class="img-responsive"/>
             <p>There is no strong relationship between latitude and cloudiness, however, it is interesting to see that a strong band of cities sits at 0, 80, and 100% cloudiness.</p>
             </article>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4"> -->
 
           <!-- Start of Visualizations imageNav Area -->
-          <section id="imageNav-area">
+          <!-- <section id="imageNav-area">
             <div class="imageNav-content">
               <h2 class="imageNav-header">Visualizations</h2>
               <hr />
@@ -88,22 +116,29 @@
                 <a href="wind.html"><img src="../../assets/images/Fig4.png" alt="Latitude vs. Wind Speed" class="imageNav-photo"></a>
               </div>
             </div>
-          </section>
+          </section> -->
           <!-- End of the Visualizations imageNav Area -->
 
-        </div>
+        <!-- </div>
       </section>
-    </div>
+    </div> -->
     <!-- End of container -->
 
     <!-- Start of footer -->
     <footer class="footer navbar-fixed-bottom">
       <div class="two-toned-footer-color"></div>
       <p class="text-muted text-muted-footer text-center">
-        &copy; Copyright Coding Bootcamp 2017
+        There is HOPE with GUN CONTROL
       </p>
     </footer>
     <!-- End of footer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+  
+    <script src="../static/js/pie_map.js"></script>
+
 
     <!-- jQuery CDN -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

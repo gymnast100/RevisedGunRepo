@@ -25,10 +25,27 @@ engine = create_engine(f'postgresql://{rds_connection_string}')
 def year():
     df = pd.read_sql_query('SELECT  * FROM guns_year LIMIT 5' , con=engine).head()
     bar_list = df.to_dict(orient='records')
-
-    
     print (bar_list)
     return jsonify(bar_list)
+
+##############################################################
+
+@app.route("/shootingtypes")
+def shootingstypes():
+     type_df = pd.read_sql_query('select * from gunshootingstype', con=engine).head(10)
+     shootingstypes = type_df.to_dict(orient='records')
+     return jsonify(shootingstypes)
+
+
+
+#######################################################
+# reading from postgres for pie chart 
+@app.route("/markercluster")
+def killings():
+      killings_df = pd.read_sql_query('SELECT * FROM killings_injuries_2018 ', con = engine)
+      killings_list = killings_df.to_dict(orient = 'records')
+      return jsonify(killings_list)
+
 #########################################################
 @app.route("/monthlydata")
 def month():
@@ -36,12 +53,20 @@ def month():
      line_dict = flaskdf.to_dict(orient='records')
      return jsonify(line_dict)
 
-
-
-
-
 #########################################################
+# pie chart fron csv
+@app.route("/incidents")
+def incidents ():
+     incidentdf = pd.read_csv("static/data/Years_Data_2014_2019.csv")
+     incident_dict = incidentdf.to_dict(orient='records')
+     return jsonify(incident_dict)
 
+
+
+##########################################################
+
+
+# rendering templates for all html pages
 @app.route("/")
 def index():
     """Return the homepage."""
@@ -56,9 +81,9 @@ def bar():
 def line():
      return render_template("linechart.html")
 
-@app.route("/couldiness")
+@app.route("/shootingtype")
 def cloudiness():
-     return render_template("cloudiness.html")
+     return render_template("shootingtype.html")
 
 @app.route("/wind")
 def wind():

@@ -18,18 +18,29 @@ app = Flask(__name__)
 #################################################
 
 
-# #postgreSQL connection
-# rds_connection_string =  "postgres:5432@localhost:5432/GUN_VIOLENCE_PROJECT" 
-# engine = create_engine(f'postgresql://{rds_connection_string}')
-# @app.route("/barchartcol")
-# def bar():
-#     df = pd.read_sql_query('SELECT  * FROM guns_year LIMIT 5' , con=engine).head()
-#     bar_dict = df.to_dict('dict')
-#     print (bar_dict)
-#     return jsonify(bar_dict)
+#postgreSQL connection
+rds_connection_string =  "postgres:5432@localhost:5432/GUN_VIOLENCE_PROJECT" 
+engine = create_engine(f'postgresql://{rds_connection_string}')
+@app.route("/yeardata")
+def year():
+    df = pd.read_sql_query('SELECT  * FROM guns_year LIMIT 5' , con=engine).head()
+    bar_list = df.to_dict(orient='records')
+
+    
+    print (bar_list)
+    return jsonify(bar_list)
 #########################################################
+@app.route("/monthlydata")
+def month():
+     flaskdf = pd.read_csv("static/data/gun2014onwrd.csv")
+     line_dict = flaskdf.to_dict(orient='records')
+     return jsonify(line_dict)
 
 
+
+
+
+#########################################################
 
 @app.route("/")
 def index():

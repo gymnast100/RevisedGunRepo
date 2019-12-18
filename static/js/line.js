@@ -1,21 +1,10 @@
-d3.csv("../../gun2014onwrd.csv").then( function (data){
 
-    var xvalues=[];
-    var y1values=[];
-    var y2values=[];
-    var y3values=[];
 
-    data.forEach(element => {
-        xvalues.push(element.date)
-        y1values.push(element.n_killed)
-        y2values.push(element.n_injured)
-        y3values.push(element.n_guns_involved)
-    });
-
+d3.json("/monthlydata").then(function(data){
 // Create the Traces
 var trace1 = {
-    x: xvalues,
-    y: y1values,
+    x: data.map(row => row.date),
+    y: data.map(row => row.n_killed),
     mode: "lines+markers",
     type: "scatter",
     name: "Count of Killed ",
@@ -26,8 +15,8 @@ var trace1 = {
   };
   
   var trace2 = {
-    x: xvalues,
-    y: y2values,
+    x: data.map(row => row.date),
+    y: data.map(row => row.n_injured),
     mode: "lines+markers",
     type: "scatter",
     name: "Count of Injured",
@@ -38,8 +27,8 @@ var trace1 = {
   };
   
   var trace3 = {
-    x: xvalues,
-    y: y3values,
+    x: data.map(row => row.date),
+    y: data.map(row => row.n_guns_involved),
     mode: "lines+markers",
     type: "scatter",
     name: "Count of Guns",
@@ -68,25 +57,50 @@ var trace1 = {
 
 // FOR BAR CHART
 
-d3.csv("../../gunyearly.csv").then( function (data){
+[
+  {
+    "guns_count": 76189.0, 
+    "injured": 30703, 
+    "killed": 15511, 
+    "year": "2017"
+  }, 
+  {
+    "guns_count": 53821.0, 
+    "injured": 30580, 
+    "killed": 15066, 
+    "year": "2016"
+  }, 
+  {
+    "guns_count": 36849.0, 
+    "injured": 26967, 
+    "killed": 13484, 
+    "year": "2015"
+  }, 
+  {
+    "guns_count": 7927.0, 
+    "injured": 23002, 
+    "killed": 12557, 
+    "year": "2014"
+  }
+]
 
-    var xvalues=[];
-    var yvalues=[];
 
-    data.forEach(element => {
-        xvalues.push(element.date)
-        yvalues.push(element.n_killed)
-    });
-    console.log(xvalues,yvalues);
-   
+d3.json("/yeardata").then( function (data){
+  
     var trace1 = {
-        x: xvalues,
-        y: yvalues,
-        text: "gunviolence",
-        name: "Greek",
+        x: data.map(row => row.year),
+        y: data.map(row => row.injured),
+        text: "Injured",
         type: "bar"
       };
-    var data =[trace1];
+    
+      var trace2 = {
+        x: data.map(row => row.year),
+        y: data.map(row => row.killed),
+        text: "",
+        type: "bar"
+      }
+    var data =[trace1, trace2];
 
     var layout = {
         title: "Gun Violence 2013 - 2018 ",
@@ -98,3 +112,4 @@ d3.csv("../../gunyearly.csv").then( function (data){
     Plotly.newPlot("barchart", data, layout);
     
 })
+

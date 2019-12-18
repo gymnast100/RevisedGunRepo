@@ -17,30 +17,18 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
-# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/bellybutton.sqlite"
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/[GUN_VIOLENCE_PROJECT]'
-# db = SQLAlchemy(app)
 
-# # reflect an existing database into a new model
-# Base = automap_base()
-# # reflect the tables
-# Base.prepare(db.engine, reflect=True)
+# #postgreSQL connection
+# rds_connection_string =  "postgres:5432@localhost:5432/GUN_VIOLENCE_PROJECT" 
+# engine = create_engine(f'postgresql://{rds_connection_string}')
+# @app.route("/barchartcol")
+# def bar():
+#     df = pd.read_sql_query('SELECT  * FROM guns_year LIMIT 5' , con=engine).head()
+#     bar_dict = df.to_dict('dict')
+#     print (bar_dict)
+#     return jsonify(bar_dict)
+#########################################################
 
-# Guns_Year = Base.classes.guns_year
-
-connection_string = "postgres:5432@localhost:5432/GUN_VIOLENCE_PROJECT"
-engine = create_engine(f'postgresql://{connection_string}')
-
-# Check for tables
-# engine.table_names()
-
-
-
-# # Save references to each table
-# Samples_Metadata = Base.classes.sample_metadata
-# Samples = Base.classes.samples
-
-# # session = Session(db.engine)
 
 
 @app.route("/")
@@ -50,17 +38,32 @@ def index():
 
 @app.route("/barchart")
 def bar():
-    return render_template("barchart.html")
+     return render_template("barchart.html")
 
 
-# @app.route("/barchart")
-# def bar():
-#     df = pd.read_sql_query('select * from guns_year', con=engine).head(4)
-#     print (list(df))
-#     return jsonify(list(df))
+@app.route("/linechart")
+def line():
+     return render_template("linechart.html")
+
+@app.route("/couldiness")
+def cloudiness():
+     return render_template("cloudiness.html")
+
+@app.route("/wind")
+def wind():
+     return render_template("wind.html")
+   
     
 
+@app.route("/current2019")
+def current():
+     return render_template("current2019.html")
+   
 
+@app.route("/data")
+def data():
+     return render_template("data.html")
+   
 
 if __name__ == "__main__":
      app.run(debug=True)

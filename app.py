@@ -40,11 +40,11 @@ def shootingstypes():
 
 #######################################################
 # reading from postgres for pie chart 
-@app.route("/markercluster")
-def killings():
-      killings_df = pd.read_sql_query('SELECT * FROM killings_injuries_2018 ', con = engine)
-      killings_list = killings_df.to_dict(orient = 'records')
-      return jsonify(killings_list)
+# @app.route("/markercluster")
+# def killings():
+#       killings_df = pd.read_sql_query('SELECT * FROM killings_injuries_2018 ', con = engine)
+#       killings_list = killings_df.to_dict(orient = 'records')
+#       return jsonify(killings_list)
 
 #########################################################
 @app.route("/monthlydata")
@@ -64,6 +64,17 @@ def incidents ():
 
 
 ##########################################################
+
+@app.route("/markercluster")
+def markercluster():
+     data = pd.read_sql_query('select * from markercluster', con=engine)
+     markercluster_dict = data.to_dict(orient='records')
+     print("xxxxxx")
+     print(markercluster_dict)
+     return jsonify(markercluster_dict)
+
+
+#######################################################
 
 
 # rendering templates for all html pages
